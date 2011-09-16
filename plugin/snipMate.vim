@@ -247,7 +247,7 @@ endf
 
 fun! GetSnipsInCurrentScope()
     let snips = {}
-    for scope in [bufnr('%')] + split(&amp;ft, '\.') + ['_']
+    for scope in [bufnr('%')] + split(&ft, '\.') + ['_']
         call extend(snips, get(s:snippets, scope, {}), 'keep')
         call extend(snips, get(s:multi_snips, scope, {}), 'keep')
     endfor
